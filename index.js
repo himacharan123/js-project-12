@@ -181,7 +181,7 @@ let playerTurn;
 function startGame() {
   if (playerTurn === undefined) {
     if (optionContainer.children.length != 0) {
-      infoDisplay.textContent = "please place all your ships first my dear!";
+      infoDisplay.textContent = "please place all your ships first my ";
     } else {
       const allBoardBlocks = document.querySelectorAll("#computer div");
       allBoardBlocks.forEach((block) =>
@@ -202,7 +202,7 @@ function handleClick(e) {
   if (!gameOver) {
     if (e.target.classList.contains("taken")) {
       e.target.classList.add("boom");
-      infoDisplay.textContent = "hey you hit the computers ship awwww!";
+      infoDisplay.textContent = "hey you hit the computers ship :)";
       let classes = Array.from(e.target.classList);
       classes = classes.filter((className) => className !== "block");
       classes = classes.filter((className) => className !== "boom");
@@ -211,7 +211,7 @@ function handleClick(e) {
       checkScore("player", playerHits, playerSunkShips);
     }
     if (!e.target.classList.contains("taken")) {
-      infoDisplay.textContent = "nothing hits this time uhhhh!";
+      infoDisplay.textContent = "nothing hits this time :(";
       e.target.classList.add("empty");
     }
     playerTurn = false;
